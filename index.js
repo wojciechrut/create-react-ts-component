@@ -1,10 +1,10 @@
+#! /usr/bin/env node
 const fs = require("fs");
 const path = require("path");
 const argv = require("minimist")(process.argv.slice(2));
 
 function create() {
   const { dir, module, scss, _: componentNames } = argv;
-  const distDir = path.join(process.cwd(), dir);
 
   if (!dir || componentNames.length < 1) {
     console.error(
@@ -12,6 +12,8 @@ function create() {
     );
     process.exit(1);
   }
+
+  const distDir = path.join(process.cwd(), dir);
 
   if (!fs.existsSync(distDir)) {
     try {
@@ -79,4 +81,4 @@ function indexContent(name) {
   `;
 }
 
-module.exports = create;
+create();
