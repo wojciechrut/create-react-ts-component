@@ -1,0 +1,25 @@
+{
+  "name": "create-react-ts-component",
+  "version": "1.0.0",
+  "description": "Create React functional component directory with index file and imported styles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojciechrut/create-react-ts-component.git"
+  },
+  "keywords": [
+    "React",
+    "Functional",
+    "Component",
+    "Create"
+  ],
+  "author": "Wojciech Rut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wojciechrut/create-react-ts-component/issues"
+  },
+  "homepage": "https://github.com/wojciechrut/create-react-ts-component#readme"
+}
