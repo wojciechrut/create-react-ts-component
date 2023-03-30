@@ -44,7 +44,7 @@ function createComponent(path, name, options) {
   const tsxFileName = `${name}.tsx`;
   const tsxFilePath = `${path}/${tsxFileName}`;
   const stylesFileName = `${name}.${module ? "module." : ""}${
-    scss ? "scss" : "css"
+    !!scss ? "scss" : "css"
   }`;
   const stylesFilePath = `${path}/${stylesFileName}`;
   const indexFilePath = `${path}/index.ts`;
@@ -63,7 +63,7 @@ function createComponent(path, name, options) {
 }
 
 function tsxContent(name, stylesFileName) {
-  const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+  const capitalizedName = parseComponentName(name);
   const propsName = `${capitalizedName}Props`;
   return `import { FC } from "react";
 import styles from "./${stylesFileName}"
@@ -79,6 +79,13 @@ export const ${capitalizedName}: FC<${propsName}> = () => {
 function indexContent(name) {
   return `export * from "./${name}"
   `;
+}
+
+function parseComponentName(name) {
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+  const split = name.split(/[-_]/);
+  return split.reduce((acc, curr) => acc + capitalize(curr), "");
 }
 
 create();

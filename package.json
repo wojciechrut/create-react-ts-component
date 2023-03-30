@@ -1,6 +1,6 @@
 {
   "name": "create-react-ts-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create React functional component directory with index file and imported styles",
   "main": "index.js",
   "scripts": {
